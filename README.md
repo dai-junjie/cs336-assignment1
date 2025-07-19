@@ -1,4 +1,33 @@
+
+# 已完成部分
+## tokenzier
+[x] train
+[x] encode(text,vocab.json,merges.txt)
+[x] decode(token_ids,vocab.json)
+[x] add_special_tokens
+
+## Transformer
+[x] Linear
+[x] Embedding
+[x] RMSNorm
+[x] SwiGLU-FeedForwardNet
+[x] RotaryPositionalEmbedding
+[x] softmax
+[x] scaled_dot_product_attention
+[x] CasualMultiHeadSelfAttention
+[x] CasualMultiHeadAttentionWithRoPE
+[x] Transformer Block
+[x] cross_entropy
+
+## training
+[ ] AdamW
+[ ] SGD
+[ ] train loop
+
+<hr>
+
 # CS336 Spring 2025 Assignment 1: Basics
+
 
 For a full description of the assignment, see the assignment handout at
 [cs336_spring2025_assignment1_basics.pdf](./cs336_spring2025_assignment1_basics.pdf)
