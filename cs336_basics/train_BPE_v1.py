@@ -444,8 +444,8 @@ class BPETrainer:
         return result.decode('utf-8')
 
 if __name__ == "__main__":
-    # corpus_path = './tests/fixtures/tinystories_sample.txt'
-    corpus_path = './tests/fixtures/corpus.en'
+    corpus_path = './tests/fixtures/tinystories_sample_5M.txt'
+    # corpus_path = './tests/fixtures/corpus.en'
     # corpus_path = 'data/TinyStoriesV2-GPT4-valid.txt'
     vocab_size = 500
     special_tokens = ["<|endoftext|>"]
@@ -454,6 +454,8 @@ if __name__ == "__main__":
     vocab,_ =trainer.train(corpus_path)
     
     trainer.save('cs336_basics')
+    
+    exit(0)
     
     print(len( set(vocab.values()) ))
  

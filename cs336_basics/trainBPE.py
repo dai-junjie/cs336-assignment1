@@ -215,6 +215,7 @@ class BPETrainer:
                 "|".join(re.escape(tok) for tok in special_tokens))
         else:
             self.special_token_pat = re.compile(r'')
+            self.special_tokens = []
         self.entry_map = {}
         self.pq = PriorityQueue()
 
@@ -483,7 +484,7 @@ class BPETrainer:
             except:
                 pass
         min_proc = min(cpu_count(), len(segments_chunks))
-        print(f'process num:{min_proc}')
+        # print(f'process num:{min_proc}')
         with Pool(processes=min_proc) as pool:
             # 使用partial来固定merges和vocab参数
             apply_merges_with_params = partial(

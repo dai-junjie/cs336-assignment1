@@ -161,3 +161,9 @@ cython_debug/
 
 .ruff_cache/
 *.zip
+
+
+
+data/** 
+
+fast_bpe/** 

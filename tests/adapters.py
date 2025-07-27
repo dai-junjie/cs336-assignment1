@@ -461,7 +461,7 @@ def run_rmsnorm(
     norm = RMSNorm(d_model,eps)
     
     state_dict = {
-        'weights': weights
+        'weight': weights
     }
     norm.load_state_dict(state_dict)
     
@@ -682,9 +682,12 @@ def run_train_bpe(
                 representing that <token1> was merged with <token2>.
                 Merges are ordered by order of creation.
     """
-    from cs336_basics.trainBPE import BPETrainer
-    trainer = BPETrainer(vocab_size,special_tokens)
-    vocab,merges = trainer.train(input_path)
-    return vocab,merges
-
+    # from cs336_basics.trainBPE import BPETrainer
+    # trainer = BPETrainer(vocab_size,special_tokens)
+    # vocab,merges = trainer.train(input_path)
+    # return vocab,merges
+    from cs336_basics.tokenizer import BpeTokenizer
+    tokenizer = BpeTokenizer(vocab_size,special_tokens)
+    tokenizer.train(input_path)
+    return tokenizer.vocab,tokenizer.merges
     raise NotImplementedError
